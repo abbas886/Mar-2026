@@ -88,13 +88,24 @@ class Employee{
 
 Design Database:
 for an organization
-Employee (id, name, salary...)
+
+Employee (id, name, salary, depat_id, project_id,account_id,
+address_id,emp_type)
 Department(id, name,...)
 Project(id, name ...)
 Account(id, type, cust_id, cust_name...)
 Address(id, hno,street, city,pin...)
-PermanentEmployee(id,hrs,da,pf)
+PermanentEmployee(id,hra,da,pf)
 ContractEmployee(id, tenure)
+
+Wrong design:
+Employy(id, name, salary, depat_name,depart_head, dept_location)
+without department table.
+
+ACID 
+
+
+
 
 
 
