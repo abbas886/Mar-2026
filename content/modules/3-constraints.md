@@ -165,21 +165,19 @@ Referential integrity ensures:
 Parent Table:
 
 ```sql
-CREATE TABLE departments (
+CREATE TABLE department (
     dept_id INT PRIMARY KEY,
     dept_name VARCHAR(50)
 );
 ```
-
 Child Table:
-
 ```sql
-CREATE TABLE employees (
+CREATE TABLE employee (
     emp_id INT PRIMARY KEY,
     name VARCHAR(50),
     dept_id INT,
     FOREIGN KEY (dept_id)
-        REFERENCES departments(dept_id)
+        REFERENCES department(dept_id)
 );
 ```
 
@@ -272,7 +270,7 @@ Ensures values satisfy a condition.
 ## Practical
 
 ```sql
-CREATE TABLE employees (
+CREATE TABLE employee (
     emp_id INT PRIMARY KEY,
     salary DECIMAL(10,2) CHECK (salary > 0)
 );

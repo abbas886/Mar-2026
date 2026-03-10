@@ -123,11 +123,11 @@ COALESCE ensures result is 0
 
 # 9️⃣ COALESCE vs ISNULL vs NVL
 
-| Function | Database | Behavior |
-|----------|----------|----------|
-| COALESCE | Standard SQL | Multiple arguments |
-| ISNULL | SQL Server | Two arguments only |
-| NVL | Oracle | Two arguments only |
+| Function | Database       | Behavior |
+|----------|----------------|----------|
+| COALESCE | Standard SQL   | Multiple arguments |
+| ISNULL   | SQL Server     | Two arguments only |
+| NVL      | Oracle         | Two arguments only |
 
 Example:
 

@@ -102,6 +102,9 @@ CREATE TABLE payments (
     amount NUMERIC(12,2)
 );
 ```
+Note : Both **NUMERIC** and **DECIMAL** are used for storing **exact numeric values with precision**.
+
+According to SQL standard, NUMERIC guarantees exact precision while DECIMAL may allow implementation variation. In practice, most databases treat them the same.
 
 ---
 
@@ -145,15 +148,15 @@ CREATE TABLE scientific_data (
 
 # 📊 Comparison Table
 
-| Data Type | Stores | Exact/Approx | Storage | Best For |
-|------------|--------|--------------|----------|----------|
-| SMALLINT | Small whole numbers | Exact | 2 bytes | Small counters |
-| INT | Whole numbers | Exact | 4 bytes | IDs, counts |
-| BIGINT | Large whole numbers | Exact | 8 bytes | Large IDs |
-| DECIMAL | Fixed decimals | Exact | Variable | Money |
-| NUMERIC | Fixed decimals | Exact | Variable | Financial data |
-| FLOAT | Decimal numbers | Approximate | 4/8 bytes | Scientific |
-| DOUBLE | High precision decimals | Approximate | 8 bytes | Engineering |
+| Data Type  | Stores                 | Exact/Approx | Storage  | Best For |
+|------------|------------------------|--------------|----------|----------|
+| SMALLINT   | Small whole numbers    | Exact        | 2 bytes  | Small counters |
+| INT        | Whole numbers          | Exact        | 4 bytes  | IDs, counts |
+| BIGINT     | Large whole numbers    | Exact        | 8 bytes  | Large IDs |
+| DECIMAL    | Fixed decimals         | Exact        | Variable | Money |
+| NUMERIC    | Fixed decimals         | Exact        | Variable | Financial data |
+| FLOAT      | Decimal numbers        | Approximate  | 4/8 bytes| Scientific |
+| DOUBLE     | High precision decimals| Approximate  | 8 bytes  | Engineering |
 
 ---
 

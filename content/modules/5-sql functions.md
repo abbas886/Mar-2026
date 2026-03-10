@@ -101,6 +101,10 @@ SELECT name, LENGTH(name)
 FROM employees;
 ```
 
+```sql
+SELECT name, NVL(commission, 0) AS adjusted_commission
+FROM employees;
+```
 ---
 
 # 🔹 Aggregate Functions
@@ -228,10 +232,13 @@ Oracle
 ## 📘 Theory
 Returns NULL if two expressions are equal, otherwise returns first expression.
 
+It is commonly used to prevent errors like division by zero or to convert specific placeholder values into NULL for accurate analysis and reporting
+
 ### 🛠 Example
 
 ```sql
 SELECT NULLIF(10, 10) FROM dual;
+
 ```
 
 Output:
@@ -243,7 +250,12 @@ SELECT NULLIF(10, 5) FROM dual;
 
 Output:
 10
-
+```sql
+SELECT
+    student,
+    -- If course_count is 0, NULLIF makes it NULL, and the AVG calculation ignores it.
+    AVG(NULLIF(course_count, 0)) AS average_courses
+```
 ---
 
 # 7️⃣ Nesting of Functions

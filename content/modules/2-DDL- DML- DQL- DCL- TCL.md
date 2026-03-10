@@ -354,7 +354,7 @@ A company wants to:
 ## Step 1: Create Table
 
 ```sql
-CREATE TABLE employees (
+CREATE TABLE employee (
     id INT PRIMARY KEY,
     name VARCHAR(50),
     department VARCHAR(50),

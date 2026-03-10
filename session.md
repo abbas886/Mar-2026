@@ -23,6 +23,7 @@ date
 LOB
     BLOB
     CLOB
+etc.,
 
 constrants:
 Unique  -  no duplicate - Exaple: 
@@ -103,6 +104,111 @@ Employy(id, name, salary, depat_name,depart_head, dept_location)
 without department table.
 
 ACID 
+
+05-03-26
+--------
+TCL
+transfer amount from Account A to Account B
+Account(acc_no, name, amount, isblocked, isActive)
+savepoint A;
+select amount from Account where acc_no=A
+///checking
+update Account set amount = amount-draw where acc_no=A
+///checking
+update Account set amount = ammoiunt + add where acc_no=B
+commit
+rollback savepoint A
+
+what will happen if we delete a row in dept table?
+if few employees are already there.  what will happened to these employees?
+
+
+on delete cascade  -if you delte row in parent table(dept)
+- child rows also automtically deleted.
+on delete set null  -if you delete row in parent table(dept)
+rows will not delte in child table - in dept column it will set null
+
+1) delete row from dept where employees are already exist
+2) remove foreign key contraint
+    add foregin key constrain aga by "on delete cascade"
+    insert few rows
+    delete row from dept where employees are already exist
+
+2) remove foreign key contraint
+    add foregin key constrain aga by "on delete set null"
+    insert few rows
+    delete row from dept where employees are already exist
+
+
+09/03/26
+---------
+subquery
+Employee(id, name, salary, dept_id)
+Department(id, name, location, manager)
+
+
+Fetch all the employees belongs to particular department id = 101
+select * from emp where dept_id=101
+
+Fetch all the employees belongs to particular department name = "Development"
+
+select * from employee
+where 
+dept_id =
+(select id from department where name = "Development")
+
+
+Fetch all the employees belongs to  department name = "Development" or "HR" or "Security"
+
+select * from emplloyees where id  in
+(
+select id from department where name in ["Development", "HR","Security"]
+)
+
+joins:
+
+Employee(id, name, salary, dept_id)
+Department(id, name, location, manager)
+
+Employees
+101 Ramesh, 1000 10
+102 Kishore, 3000 20
+103 Ramu     5000 30
+104 Rama    5000  
+
+Department
+10 IT
+20 Security
+30 HR
+40 Contract
+
+# Multi-row subquery → Use IN, ANY, ALL
+# fetch all the employees belongs ether "development" or "HR"
+
+select * from employee where dept_id
+in = 
+(select id from department where name = "development"
+or name = "HR")
+
+# Question :  select all the emloyees who are getting average salary of department "development"
+
+select * from employees where salary >
+(
+select avg(salary) from employee
+where id = 
+(select id from department where name ="development")
+)
+
+
+
+
+
+
+
+
+
+
+
 
 
 
