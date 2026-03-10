@@ -1,17 +1,5 @@
 9/3/26
 ------
-INTEPS26SAP002
-DB Concepts, Advanced DB concepts(Schema,Oracle SQL/PL SQL)
-Track : SAP Analytics with MDG
-Curriculum duration
-
-Total no. of stages
-
-
-
-13 Weeks
-
-2
 
 data
 data base
