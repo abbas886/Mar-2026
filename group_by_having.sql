@@ -21,8 +21,8 @@ select dept_id, job_title, avg(salary) as avg_salary from employee group by dept
 
 ## Advanced GROUP BY Questions
 # Find the department with highest total salary.
-select dept_id, sum(salary) as total_salary from employee group by dept_id order by total_salary
-limit 1;
+select dept_id, sum(salary) as total from employee group by dept_id order by total desc limit 1
+
 
 #Find departments having at least one employee earning more than 90000.
 select dept_id from employee group by dept_id having max(salary)>90000;
