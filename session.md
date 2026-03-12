@@ -199,7 +199,78 @@ where id =
 (select id from department where name ="development")
 )
 
+11/03/26
+--------
+How to learn a programming language quickly
 
+Telugu/English                  programming language
+--------------                  ---------------------
+alphabets                       alphabets
+words                           keywords
+grammer                         syntax
+sentances                       statements
+essay writing/paragraphs        function/program
+
+Factors need to consider while writing programs
+coding standards
+    naming conventions - variables,methods, classes
+code reusability
+performance
+    memory
+    time
+modularility
+
+statements:
+----------
+input
+output
+conditional
+    if
+        simple if
+        if - else
+        nested if
+        else - if 
+    switch
+controle statements
+    for
+    while
+break  - will comeout from the loop
+continue - will continue the loop by skippking statemement
+return - will comout from the method
+
+method
+def method_name(parameters):
+    statements
+
+def message():
+    return "hello";
+
+def message (name):
+    return "hello" + name;
+def add(x,y):
+    return x+y;
+
+12/03/26
+--------
+Employeement
+addEmployee(emp):
+  list.add(emp)
+deleteEmployee(empId)
+updateEmployee()
+getAllEmployees()
+getEmployeeById()
+employees = []  -- 1)list   2)dictionary
+employee = {
+    "emp_id"  :"1001",
+    "emp_name" :"Eswar"
+}
+
+## OOP
+model
+ - 
+repository
+service
+controller/api
 
 
 

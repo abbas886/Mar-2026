@@ -191,12 +191,12 @@ END;
 
 # Difference Between Procedures and Functions
 
-| Feature | Procedure | Function |
-|--------|-----------|----------|
-| Purpose | Perform an action | Return a value |
-| Return Value | Optional | Mandatory |
-| Called From SQL | No | Yes |
-| Return Statement | Not required | Required |
+| Feature         | Procedure          | Function |
+|---------------  |--------------------|----------|
+| Purpose         | Perform an action  | Return a value |
+| Return Value    | Optional           | Mandatory |
+| Called From SQL | No                 | Yes |
+| Return Statement | Not required      | Required |
 
 Example using function in SQL:
 
