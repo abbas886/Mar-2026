@@ -48,15 +48,15 @@ CACHE number | NOCACHE;
 
 ### Important Parameters
 
-| Parameter | Description |
-|----------|-------------|
-| START WITH | First number generated |
+| Parameter    | Description |
+|--------------|-------------|
+| START WITH   | First number generated |
 | INCREMENT BY | Step size between sequence values |
-| MINVALUE | Minimum value allowed |
-| MAXVALUE | Maximum value allowed |
-| CYCLE | Restart sequence after reaching max |
-| NOCYCLE | Do not restart sequence |
-| CACHE | Store sequence numbers in memory |
+| MINVALUE     | Minimum value allowed |
+| MAXVALUE     | Maximum value allowed |
+| CYCLE        | Restart sequence after reaching max |
+| NOCYCLE      | Do not restart sequence |
+| CACHE        | Store sequence numbers in memory |
 
 ---
 

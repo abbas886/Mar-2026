@@ -194,6 +194,41 @@ BEGIN
 END;
 /
 ```
+### 2. Searched CASE
+In **Searched CASE**, each `WHEN` clause contains a condition.
+
+**Syntax**
+
+CASE
+   WHEN condition1 THEN result1
+   WHEN condition2 THEN result2
+   ELSE default_result
+END CASE;
+
+**Example**
+
+DECLARE
+   v_salary NUMBER := 90000;
+   v_grade VARCHAR2(20);
+BEGIN
+   CASE
+      WHEN v_salary > 100000 THEN v_grade := 'Executive';
+      WHEN v_salary > 80000 THEN v_grade := 'Senior';
+      WHEN v_salary > 50000 THEN v_grade := 'Mid Level';
+      ELSE v_grade := 'Junior';
+   END CASE;
+
+   DBMS_OUTPUT.PUT_LINE('Employee Grade: ' || v_grade);
+END;
+/
+
+### Difference
+
+| Feature | Simple CASE | Searched CASE |
+|--------|-------------|---------------|
+| Comparison | Compares one expression with values | Evaluates logical conditions |
+| Use Case | Fixed value matching | Complex conditions |
+| Example | dept_id = 1,2,3 | salary > 80000 |
 
 ---
 
