@@ -362,5 +362,27 @@ This section covered **PL/SQL Cursors**, including:
 - Using FOR UPDATE and WHERE CURRENT OF
 - REF Cursor for dynamic queries and result set passing
 
+ Real Enterprise Uses of Cursors
+
+Cursors are commonly used for:
+
+| Use Case | Example |
+|--------|--------|
+| Batch processing | Process thousands of records |
+| Data migration | Move data from staging tables |
+| Reporting | Generate detailed reports |
+| Payroll processing | Update salary records |
+| Data validation | Check records before insert |
+
+---
+
+# Best Practice
+
+Whenever possible, use **cursor FOR loops** because they:
+- Reduce code complexity
+- Automatically manage OPEN, FETCH, CLOSE
+- Are less error-prone
+
+
 Cursors are essential for **processing multi-row query results and building advanced database applications**.
 ```
