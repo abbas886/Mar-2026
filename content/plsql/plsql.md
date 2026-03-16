@@ -1,15 +1,20 @@
 # The Complete PL/SQL Bootcamp: Beginner to Advanced PL/SQL
 
 ## 1. Introduction to PL/SQL
-- What is PL/SQL?
-- SQL vs PL/SQL
-- Advantages of PL/SQL
-- Features of PL/SQL
-- Architecture of PL/SQL
-- PL/SQL Engine
-- Client-side vs Server-side execution
-- Writing your first PL/SQL program
-- Structure of a PL/SQL block
+
+**PL/SQL (Procedural Language/SQL)** is Oracle's procedural extension to SQL. While SQL is used to query and manipulate data, PL/SQL allows developers to add **procedural programming constructs** such as variables, loops, conditions, and exception handling to SQL statements.
+
+PL/SQL enables developers to implement **business logic directly inside the database**, which improves performance and reduces network communication between applications and the database server.
+
+### Advantages of PL/SQL
+
+- **Better Performance** – Multiple SQL statements can be executed in a single block, reducing network traffic.
+- **Modular Programming** – Programs can be organized into procedures, functions, packages, and triggers.
+- **Exception Handling** – Built-in mechanisms to handle runtime errors.
+- **Security** – Business logic can be secured within the database using privileges.
+- **Integration with SQL** – PL/SQL seamlessly integrates SQL statements.
+- **Code Reusability** – Stored procedures and functions can be reused.
+
 
 Example:
 
@@ -128,6 +133,34 @@ END;
 
 Example:
 
+# Basic LOOP
+Syntax:
+
+LOOP
+   statements;
+   EXIT WHEN condition;
+END LOOP;
+
+# Ex :
+DECLARE
+   v_counter NUMBER := 1;
+BEGIN
+   LOOP
+      DBMS_OUTPUT.PUT_LINE('Counter: ' || v_counter);
+      v_counter := v_counter + 1;
+
+      EXIT WHEN v_counter > 5;
+   END LOOP;
+END;
+/
+
+# FOR loop
+FOR variable IN start..end LOOP
+   statements;
+END LOOP;
+
+# Ex:
+
 BEGIN
     FOR i IN 1..5 LOOP
         DBMS_OUTPUT.PUT_LINE('Number: ' || i);
@@ -135,33 +168,64 @@ BEGIN
 END;
 /
 
+# While
+# Syntax: 
+WHILE condition LOOP
+   statements;
+END LOOP;
+
+# Example 
+DECLARE
+   v_counter NUMBER := 1;
+BEGIN
+   WHILE v_counter <= 5 LOOP
+      DBMS_OUTPUT.PUT_LINE('Counter: ' || v_counter);
+      v_counter := v_counter + 1;
+   END LOOP;
+END;
+/
+
+## 9. Procedures
+- What is a procedure?
+- Syntax of procedure
+- Parameters
+  - IN
+  - OUT
+  - IN OUT
+- Calling procedures
+- Stored procedures
+
+# A procedure is a named PL/SQL block stored in the database that performs a specific task or set of operations.
+It can accept input parameters and execute business logic, but it does not return a value directly like a function.
+Example:
+
+CREATE OR REPLACE PROCEDURE greet_user(name VARCHAR2)
+AS
+BEGIN
+    DBMS_OUTPUT.PUT_LINE('Hello ' || name);
+END;
+/
+
 ---
 
-## 7. Cursors
-- What is a cursor?
-- Implicit cursor
-- Explicit cursor
-- Cursor attributes
-  - %FOUND
-  - %NOTFOUND
-  - %ROWCOUNT
-  - %ISOPEN
-- Cursor FOR loop
+## 10. Functions
+- What is a function?
+- Creating functions
+- Returning values
+- Difference between procedure and function
+- Using functions in SQL
+
+
+# A function is a named PL/SQL block stored in the database that performs a specific calculation or task and returns a single value.
+It can accept input parameters and can be used inside SQL queries (like in SELECT statements).
 
 Example:
 
-DECLARE
-    CURSOR emp_cursor IS
-        SELECT emp_name FROM employees;
-    emp_record emp_cursor%ROWTYPE;
+CREATE OR REPLACE FUNCTION get_bonus(salary NUMBER)
+RETURN NUMBER
+AS
 BEGIN
-    OPEN emp_cursor;
-    LOOP
-        FETCH emp_cursor INTO emp_record;
-        EXIT WHEN emp_cursor%NOTFOUND;
-        DBMS_OUTPUT.PUT_LINE(emp_record.emp_name);
-    END LOOP;
-    CLOSE emp_cursor;
+    RETURN salary * 0.10;
 END;
 /
 
@@ -192,45 +256,6 @@ END;
 
 ---
 
-## 9. Procedures
-- What is a procedure?
-- Syntax of procedure
-- Parameters
-  - IN
-  - OUT
-  - IN OUT
-- Calling procedures
-- Stored procedures
-
-Example:
-
-CREATE OR REPLACE PROCEDURE greet_user(name VARCHAR2)
-AS
-BEGIN
-    DBMS_OUTPUT.PUT_LINE('Hello ' || name);
-END;
-/
-
----
-
-## 10. Functions
-- What is a function?
-- Creating functions
-- Returning values
-- Difference between procedure and function
-- Using functions in SQL
-
-Example:
-
-CREATE OR REPLACE FUNCTION get_bonus(salary NUMBER)
-RETURN NUMBER
-AS
-BEGIN
-    RETURN salary * 0.10;
-END;
-/
-
----
 
 ## 11. Packages
 - What is a package?
