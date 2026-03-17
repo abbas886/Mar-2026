@@ -2,7 +2,6 @@
 ----PL/SQL procedures are widely used to implement business 
 --logic close to the data. They are commonly invoked from 
 --applications, batch jobs, APIs, or tools like Oracle APEX.
-
 --Examples
 --1️⃣ Payroll Processing
 --A procedure calculates salaries, bonuses, and deductions for employees every month.
@@ -10,8 +9,39 @@
 --Calculate tax
 --Apply bonus
 --Update payroll table
+-- -- Real use Monthly payroll batch jobs.
 
--- Real use Monthly payroll batch jobs.
+
+-- simple procedure - hello world
+CREATE OR REPLACE PROCEDURE greet_user
+IS
+BEGIN
+   DBMS_OUTPUT.PUT_LINE('Welcome to PL/SQL');
+END;
+
+BEGIN
+   greet_user;
+END;
+
+-- with parameters
+CREATE OR REPLACE PROCEDURE add_numbers(
+   a IN NUMBER,
+   b IN NUMBER,
+   result OUT NUMBER
+)
+IS
+BEGIN
+   result := a + b;
+END;
+
+-- calling
+DECLARE
+   total NUMBER;
+BEGIN
+   add_numbers(10,20,total);
+   DBMS_OUTPUT.PUT_LINE(total);
+END;
+
 CREATE OR REPLACE PROCEDURE process_salary(p_emp_id NUMBER)
 IS
     v_salary NUMBER;
@@ -29,8 +59,7 @@ BEGIN
 
 END;
 /
-
--- calling from block
+-- -- calling from block
 begin
 process_salary(1001);
 end
@@ -68,6 +97,14 @@ BEGIN
     WHERE dept_id = 1;
 END;
 /
+
+-- calling procedure
+--1
+execute update_bonus();
+--2
+begin
+ update_bonus();
+end
 
 -- 4️⃣ Reporting Procedures
 -- Complex reports are generated using stored procedures.

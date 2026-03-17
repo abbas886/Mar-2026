@@ -22,9 +22,7 @@ BEGIN
 END;
 /
 -- Usage in SQL:
-SELECT emp_name,
-       get_net_salary(emp_id) AS net_salary
-FROM employee;
+SELECT emp_name, get_net_salary(emp_id) AS net_salary FROM employee;
 
 -- 2️⃣ Experience Calculation (Very Common)
 -- Calculate employee experience from hire_date.
@@ -42,9 +40,7 @@ BEGIN
     RETURN v_years;
 END;
 /
-SELECT emp_name,
-       get_experience(emp_id) AS experience
-FROM employee;
+SELECT emp_name, get_experience(emp_id) AS experience FROM employee;
 
 -- 3️⃣ Department Employee Count
 -- Real use: Department-wise analytics, reporting
@@ -62,9 +58,7 @@ BEGIN
 END;
 /
 -- Usage in SQL:
-SELECT dept_name,
-       dept_employee_count(dept_id)
-FROM dept;
+SELECT dept_name, dept_employee_count(dept_id) FROM dept;
 
 -- 4️⃣ Tax Calculation Function (Finance Systems)
 -- Real use: Financial calculations.
@@ -82,10 +76,7 @@ BEGIN
 END;
 /
 -- Usage in SQL:
-SELECT emp_name,
-       salary,
-       calculate_tax(salary) AS tax
-FROM employee;
+SELECT emp_name, salary, calculate_tax(salary) AS tax FROM employee;
 
 -- 5️⃣ Status Evaluation Function
 -- Example: Determine employee status.
@@ -108,9 +99,7 @@ BEGIN
 END;
 /
 -- Usage in SQL:
-SELECT emp_name,
-       employee_status(emp_id)
-FROM employee;
+SELECT emp_name, employee_status(emp_id) FROM employee;
 
 -- 6️⃣ Data Formatting Function
 -- Format employee name.
@@ -123,8 +112,7 @@ BEGIN
 END;
 /
 -- Usage in SQL:
-SELECT format_name(emp_name)
-FROM employee;
+SELECT format_name(emp_name) FROM employee;
 
 -- 7️⃣ Validation Function
 -- Example: Check if salary is valid.
@@ -142,9 +130,7 @@ BEGIN
 END;
 /
 -- usage
-SELECT emp_name,
-       valid_salary(salary)
-FROM employee;
+SELECT emp_name, valid_salary(salary) FROM employee;
 
 -- 8️⃣ Ranking or Score Calculation
 --  Example: calculate performance score.
@@ -158,6 +144,4 @@ END;
 /
 
 -- Usage in SQL:
-SELECT emp_name,
-       performance_score(salary)
-FROM employee;
+SELECT emp_name,  performance_score(salary) FROM employee;

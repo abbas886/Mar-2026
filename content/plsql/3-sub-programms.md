@@ -206,7 +206,7 @@ SELECT calculate_bonus(50000) FROM dual;
 
 ---
 
-# Defining a Subprogram in an SQL Statement
+# Calling a Subprogram in an SQL Statement
 
 Functions can be used directly inside SQL queries.
 

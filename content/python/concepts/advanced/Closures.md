@@ -1,5 +1,31 @@
 # Closures in Python with Real-Time Use Cases
 
+Closure → remembers data
+Decorator → modifies behavior (using closure internally)
+
+| Concept | Closure                       | Decorator                          |
+| ------- | ----------------------------- | ---------------------------------- |
+| Purpose | Remember data                 | Modify/extend function behavior    |
+| Focus   | Data retention                | Function enhancement               |
+| Usage   | Creating customized functions | Adding logging, auth, caching etc. |
+| Syntax  | Normal function               | Often uses `@decorator` syntax     |
+
+def decorator(func):
+    def wrapper():   # closure (remembers func) - Decorator internally uses closure
+        func()
+    return wrapper
+
+# Use Closure when:
+You need state retention
+Creating custom functions dynamically
+Function factories
+
+# Use Decorator when:
+Adding logging
+Authentication/authorization
+Caching
+Performance measurement
+
 ## 1. What is a Closure?
 
 A **closure** is a function that **remembers the variables from its outer (enclosing) function even after the outer function has finished executing**.

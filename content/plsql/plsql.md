@@ -25,6 +25,9 @@ BEGIN
     DBMS_OUTPUT.PUT_LINE(message);
 END;
 /
+BEGIN
+DBMS_OUTPUT.PUT_LINE('Hello PL/SQL');
+END
 
 ---
 

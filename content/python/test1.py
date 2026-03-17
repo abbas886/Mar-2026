@@ -1,7 +1,15 @@
-def read_large_file(file_path):
-        with open(file_path, "r") as file:
-            for line in file:
-                yield line
+# decorator logger
+def logger(func):
+    def wrapper():
+        print("Function execution started")
+        func()
+        print("Function execution finished")
+    return wrapper
 
-for line in read_large_file("assignment.md"):
-        print(line.strip())
+@logger
+def function():
+    print("hello")
+
+function();
+
+    

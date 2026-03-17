@@ -1,28 +1,39 @@
-# employee management system
-# initialize employee list
-# getAllEmployees() - returns list of all employees
-# getEmployeeById(id) - returns employee with given id
-# addEmployee(employee) - adds a new employee to the list
-# deleteEmployee(id) - removes employee with given id from the list
-class Employee:
-    def __init__(self, id, name, salary, department, position):
-        self.id = id
-        self.name = name
-        self.salary = salary
-        self.department = department
-        self.position = position
-    def addEmployee(self, employee):
-        self.employee_list.append(employee)
-    def getAllEmployees(self):
-        return self.employee_list
-    def getEmployeeById(self, id):
-        for employee in self.employee_list:
-            if employee.id == id:
-                return employee
-        return None
-    def deleteEmployee(self, id):
-        for employee in self.employee_list:
-            if employee.id == id:
-                self.employee_list.remove(employee)
-                return True
-        return False
+import asyncio
+import time
+
+## block vs asyn
+# block
+def task():
+    time.sleep(2)
+
+for i in range(3):
+    task()
+# async
+async def task():
+    await asyncio.sleep(2)
+
+async def main():
+    await asyncio.gather(task(), task(), task())
+
+asyncio.run(main())
+
+async def hello():
+    print("Hello")
+    await asyncio.sleep(2)
+    print("World")
+
+asyncio.run(hello())
+
+async def task(name):
+    print(f"Task {name} started")
+    await asyncio.sleep(2)
+    print(f"Task {name} completed")
+
+async def main():
+    await asyncio.gather(
+        task("A"),
+        task("B"),
+        task("C")
+    )
+
+asyncio.run(main())
