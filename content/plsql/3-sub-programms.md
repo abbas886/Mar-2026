@@ -402,7 +402,7 @@ END employee_pkg;
 Package body:
 
 ```
-CREATE OR REPLACE PACKAGE BODY employee_pkg AS
+CREATE OR REPLACE PACKAGE BODY employee_pkg_body AS
 
 PROCEDURE show_employee(name VARCHAR2)
 IS
