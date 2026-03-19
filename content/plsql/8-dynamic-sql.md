@@ -136,8 +136,17 @@ END;
 /
 ```
 
----
+--- ADVANCED......
 
+
+
+
+
+
+
+
+
+-
 # Cursor Based Record
 
 A **cursor-based record** automatically takes the structure of the cursor query.

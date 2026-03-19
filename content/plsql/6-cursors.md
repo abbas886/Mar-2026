@@ -107,6 +107,17 @@ EXIT WHEN emp_cursor%NOTFOUND;
 ```
 
 ---
+### ADVANCED TOPICS IN CURSORS #############
+
+
+
+
+
+
+
+
+
+
 
 # Cursor With Attributes and Without Attributes
 
@@ -270,6 +281,21 @@ This ensures:
 - Safe updates in concurrent environments
 
 ---
+
+========================================
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 # REF Cursor
 
